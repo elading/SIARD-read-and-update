@@ -33,8 +33,8 @@ print(tabulate.tabulate(pd.DataFrame(data)))
 data = []
 
 for table in tables:
-        if table.find("{http://www.bar.admin.ch/xmlns/siard/2/metadata.xsd}candidateKeys"):    
-            candkey = table.find("{http://www.bar.admin.ch/xmlns/siard/2/metadata.xsd}candidateKeys")
+        if table.find("{*}candidateKeys"):    
+            candkey = table.find("{*}candidateKeys")
             data += [(table[1].text, table[0].text, candkey[0][0].text, candkey[0][1].text)]
 
 print(tabulate.tabulate(pd.DataFrame(data)))
@@ -54,7 +54,7 @@ print(tabulate.tabulate(pd.DataFrame(data)))
 
 data = []
 for table in tables:
-    data += [(table[1].text, table.find("{http://www.bar.admin.ch/xmlns/siard/2/metadata.xsd}name").text)]
+    data += [(table[1].text, table.find("{*}name").text)]
     
 tabeller = pd.DataFrame(data)
 print(tabulate.tabulate(tabeller))
