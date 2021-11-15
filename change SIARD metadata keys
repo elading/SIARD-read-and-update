@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 import pandas as pd
 import tabulate
 
-# TILS:
+# Retrieve archive metadata file
 xmlfil = r'\content\SIARDfile\header\metadata.xml'
 
 
