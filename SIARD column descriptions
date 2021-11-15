@@ -4,9 +4,9 @@ import xml.etree.ElementTree as ET
 import pandas as pd
 import tabulate
 
-# File import and parse
+# Retrieve archive metadata file
+xmlfil = r'\content\SIARDfile\header\metadata.xml'
 
-metadata_fil = r'C:\Users\eirlad\OneDrive - Arkivverket\Skrivebord\Uttrekk eksempler\SIARD-uttrekk\NASK\NASK_PROD\header\metadata.xml'
 root = ET.parse(metadata_fil).getroot()
 
 tables = root.find("{*}schemas")[0].find("{*}tables")
